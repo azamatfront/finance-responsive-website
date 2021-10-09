@@ -160,7 +160,7 @@ body {
 /* ------HEADER END------------------------------------------------------------------------------------- */
 
 
-/* ------PAGE START------------------------------------------------------------------------------------- */
+/* ------PAGES START------------------------------------------------------------------------------------- */
 .page {
   flex: 1 1 auto;
 }
@@ -174,15 +174,24 @@ body {
   z-index: 50;
 }
 
-/* .page__experiences {
+.page__experiences {
 }
 
 .page__practice {
 }
 
 .page__whoweare {
-} */
-/* ------PAGE END------------------------------------------------------------------------------------- */
+} 
+
+.page__clients:not(:last-child) {
+  margin: 0 0 20px 0;
+}
+
+.page__subscribe {
+}
+
+
+/* ------PAGES END------------------------------------------------------------------------------------- */
 
 
 /* ------HEADER BLOCK START--------------------------------------------------------------------------- */
@@ -625,6 +634,7 @@ body {
 /* ------WHO WE ARE START------------------------------------------------------------------------ */
 .whoweare {
   padding: 80px 0 130px 0;
+  background: #fff;
 }
 
 /* .whoweare__container {
@@ -636,6 +646,7 @@ body {
 
 .whoweare__body {
   display: flex;
+  align-items: flex-start;
 }
 
 .whoweare__video {
@@ -715,8 +726,203 @@ body {
   font-size: 14px;
   line-height: calc(20 / 14 * 100%);
   color: #737373;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 225px;
+}
+
+@media (max-width: 1080px) {
+  .whoweare__content {
+    padding: 0 0 0 50px;
+  }
+}
+
+@media (max-width: 950px) {
+  .whoweare {
+    padding: 50px 0 50px 0;
+  }
+  .whoweare__body {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .whoweare__title {
+    font-size: 24px;
+  }
+  .whoweare__content {
+    padding: 0 0 0 0;
+  }
+  .whoweare__video {
+    padding: 0 0 56.25% 0;
+  }
+  .whoweare__video:not(:last-child) {
+    margin: 50px 0 0 0;
+  }
+  .whoweare__header {
+    margin: 0 0 30px 0;
+  }
+}
+@media (max-width: 767px) {
+  .whoweare {
+    padding: 20px 0 50px 0;
+  }
+  .whoweare__top:not(:last-child) {
+    margin: 0 0 30px 0;
+  }
+  .whoweare__video:not(:last-child) {
+    margin: 30px 0 0 0;
+  }
 }
 /* ------WHO WE ARE END-------------------------------------------------------------------------- */
+
+
+/* ------CLIENTS START--------------------------------------------------------------------------- */
+.clients {
+  padding: 50px 0;
+}
+@media (max-width: 767px) {
+  .clients {
+    padding: 30px 0;
+  }
+}
+
+.clients__container {}
+
+.clients__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.clients__item {
+  padding: 8px 15px;
+  flex: 0 1 16.6667%;
+  text-align: center;
+  min-width: 140px;
+}
+
+.clients__item img {
+  max-width: 100%;
+}
+
+/* ------CLIENTS END----------------------------------------------------------------------------- */
+
+/* ------SUBSCRIBE START------------------------------------------------------------------------- */
+.subscribe {
+  position: relative;
+  padding: 0 0 20px 0;
+}
+
+.subscribe::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 77px;
+  background: #252B42;
+}
+
+.subscribe__container {
+}
+
+.subscribe__body {
+  position: relative;
+  z-index: 2;
+  padding: 30px 50px;
+  align-items: center;
+  background: #17213C;
+  border-radius: 2px;
+}
+@media (min-width: 1070px) {
+  .subscribe__body {
+    margin: 0 30px;
+  }
+}
+
+
+.subscribe__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: calc(32 / 24 * 100%);
+  letter-spacing: 0.1px;
+  color: #fff;
+  flex: 0 1 50%;
+}
+
+@media (max-width: 810px) {
+  .subscribe__title {
+    margin: 0 0 20px 0;
+  }
+  .subscribe__body {
+    margin: 0 -15px;
+    padding: 20px 15px;
+  }
+}
+
+@media (min-width: 810px) {
+  .subscribe__title {
+    max-width: 266px;
+  }
+  .subscribe__body {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+.subscribe__form {
+  flex: 0 1 50%;
+  display: flex;
+  align-items: center;
+}
+
+.subscribe__input {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 58px;
+  padding: 0 20px;
+  background: #F9F9F9;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+  color: #737373;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  line-height: calc(28 / 14 * 100%);
+}
+
+.subscribe__input:focus {
+  outline: none;
+  color: #000;
+}
+
+.subscribe__button {
+  background: #FF7B47;
+  border: 1px solid #E6E6E6;
+  border-radius: 0px 5px 5px 0px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  padding: 0 22.5px;
+  font-size: 14px;
+  line-height: calc(28 / 14 * 100%);
+}
+@media (max-width: 810px) {
+  .subscribe__button {
+    padding: 0 15px;
+  }
+  .subscribe__input {
+    padding: 0 15px;
+  }
+}
+/* ------SUBSCRIBE END--------------------------------------------------------------------------- */
+
 
 
 /* ------FOOTER START---------------------------------------------------------------------------- */
